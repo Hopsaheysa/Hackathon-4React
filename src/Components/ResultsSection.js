@@ -3,7 +3,7 @@ import { DateTime } from "luxon";
 function ResultsSection(props) {
 
     let slicedFlights = props.flights.slice(props.offset, props.offset + parseInt(props.resultsPerPage));
-    
+
     function handleSubmitNext() {
         const next = parseInt(props.offset) + parseInt(props.resultsPerPage);
         props.setOffset(next);
@@ -53,8 +53,10 @@ function ResultsSection(props) {
                         ))}
                     </tbody>
                 </table>
-                <button onClick={handleSubmitPrev}>Previous</button>
-                <button onClick={handleSubmitNext}>Next</button>
+                {props.offset - props.resultsPerPage < 0 ? "" : <button onClick={handleSubmitPrev}>Previous</button>}
+                
+                {props.offset + props.resultsPerPage >= props.flights.length ? "" : <button onClick={handleSubmitNext}>Next</button>}
+
             </div>
         </section>
     );
