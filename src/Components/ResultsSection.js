@@ -1,58 +1,43 @@
-function ResultsSection() {
-    return (
-        <section id="section_two">
-            <div>
-                <h1>Search results</h1>
+import { DateTime } from "luxon";
 
-                <table className="styled-table">
-                    <tbody>
-                        <tr>
-                            <th>Destination</th>
-                            <th>Departure Time</th>
-                            <th>Arrival Time</th>
-                            <th>Price</th>
-                        </tr>
-                    </tbody>
-                     {/* <tbody>
-                    <tr>
-                    <td>Paris</td>
-                    <td>12:00</td>
-                    <td>15:30</td>
-                    <td>$275</td>
-            </tr>
-            </tbody>
+function ResultsSection(props) {
+  return (
+    <section id="section_two">
+      <div>
+        <h1>Search results</h1>
+
+        <table className="styled-table">
+          <tbody>
             <tr>
-                    <td>Berlin</td>
-                    <td>12:10</td>
-                    <td>15:40</td>
-                    <td>$175</td>
+              <th>Origin</th>
+              <th>Destination</th>
+              <th>Departure Time</th>
+              <th>Arrival Time</th>
+              <th>Price</th>
             </tr>
-            <tr>
-                    <td>London</td>
-                    <td>13:10</td>
-                    <td>16:40</td>
-                    <td>$375</td>
-            </tr> */}
 
-
-
-                    {/* @foreach($reservations as $reservation)
-                <tr>
-                    <td>{{ $reservation->book->title }}</td>
-                    <td></td>
-                    <td>{{ $reservation->from }}</td>
-                    <td>{{ $reservation->to }}</td>
-                </tr>
-            @endforeach */}
-
-                </table>
-            </div>
-        </section>
-
-    )
+            {props.flights.map((flight, i) => (
+              <tr key={i}>
+                <td>{flight.cityFrom}</td>
+                <td>{flight.cityTo}</td>
+                <td>
+                  {DateTime.fromMillis(flight.dTime * 1000).toFormat(
+                    "yyyy LLL dd hh:mm"
+                  )}
+                </td>
+                <td>
+                  {DateTime.fromMillis(flight.aTime * 1000).toFormat(
+                    "yyyy LLL dd hh:mm"
+                  )}
+                </td>
+                <td>{flight.price} EUR</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  );
 }
 
-
-export default ResultsSection
-
-
+export default ResultsSection;

@@ -91,10 +91,11 @@ h2 {
 }
 
 #section_two {
-  height: 100vh;
+  color: rgb(34, 4, 82);
+  /* height: 100vh; */
   font-size: 50%;
   text-align: center;
-  background-image: url("./airport.jpg");
+  /* background-image: url("./airport.jpg"); */
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
