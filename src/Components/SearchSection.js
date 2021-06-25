@@ -8,12 +8,12 @@ function SearchSection(props) {
         props.setDestinationTo(event.target[1].value);
         props.setDateDepartureFrom(event.target[2].value);
         props.setDateDepartureTo(event.target[3].value);
-
         if (event.target[4].checked) {
             props.setDirectFlight("&direct_flights=1")
         } else {
             props.setDirectFlight("&direct_flights=0");
         }
+        props.setResultsPerPage(event.target[5].value);
     }
 
     // function handleChange(event) {
@@ -60,6 +60,8 @@ function SearchSection(props) {
                     Direct Flights:
                     <input type="checkbox" />
                     <br />
+                    Limit by:
+                    <input type="number" defaultValue={5}/>
                     <button className="search__button" type="submit">Search</button>
                 </form>
             </div>

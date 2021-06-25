@@ -1,6 +1,21 @@
 import { DateTime } from "luxon";
 
 function ResultsSection(props) {
+
+    let slicedFlights = props.flights.slice(props.offset, props.offset + parseInt(props.resultsPerPage));
+    
+    function handleSubmitNext() {
+        const next = parseInt(props.offset) + parseInt(props.resultsPerPage);
+        props.setOffset(next);
+        slicedFlights = props.flights.slice(parseInt(next), parseInt(next) + parseInt(props.resultsPerPage));
+        return slicedFlights;
+    }
+
+    function handleSubmitPrev() {
+        let prev = props.offset - parseInt(props.resultsPerPage);
+        if (prev < 0) prev = 0;
+        props.setOffset(prev);
+    }
     return (
         <section id="section_two">
             <div>
@@ -17,7 +32,7 @@ function ResultsSection(props) {
                             <th>Stopovers</th>
                         </tr>
 
-                        {props.flights.map((flight, i) => (
+                        {slicedFlights.map((flight, i) => (
                             <tr key={i}>
                                 <td>{flight.cityFrom}</td>
                                 <td>{flight.cityTo}</td>
@@ -34,9 +49,12 @@ function ResultsSection(props) {
                                 <td>{flight.price} EUR</td>
                                 <td>{(flight.route.length) == 1 ? "Direct" : flight.route.length - 1}</td>
                             </tr>
+
                         ))}
                     </tbody>
                 </table>
+                <button onClick={handleSubmitPrev}>Previous</button>
+                <button onClick={handleSubmitNext}>Next</button>
             </div>
         </section>
     );
