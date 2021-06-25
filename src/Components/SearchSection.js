@@ -27,11 +27,11 @@ function SearchSection(props) {
                     <p>From:
                     </p>
                     <select name="destinations" id="destinations">
-                        <option value="VLC">Valencia</option>
-                        <option value="BCN">Barcelona</option>
-                        <option value="MAD">Madrid</option>
-                        <option value="MXP">Milano</option>
                         <option value="PRG">Prague</option>
+                        <option value="SXF">Berlin</option>
+                        <option value="MAD">Madrid</option>
+                        <option value="WAW">Warsaw</option>
+                        <option value="PED">Pardubice</option>
                         <option value="EMA">East Midlands Airport</option>
                     </select>
                     <br />
