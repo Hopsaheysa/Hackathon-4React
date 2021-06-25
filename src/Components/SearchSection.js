@@ -1,6 +1,7 @@
 import { DateTime } from 'luxon';
 
 function SearchSection(props) {
+    
     function handleSubmit(event) {
         event.preventDefault();
         const dateFrom = DateTime.fromISO(event.target[2].value);

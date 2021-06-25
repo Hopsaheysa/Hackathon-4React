@@ -19,8 +19,10 @@ function App() {
   const [offset, setOffset] = useState(0);
   const [resultsPerPage, setResultsPerPage] = useState(5);
 
-  // const [searchQuery, setSearchQuery] = useState(null);
-  // const [searchResult, setSearchResult] = useState("");
+  const [searchQuery, setSearchQuery] = useState("");
+  const [searchResult, setSearchResult] = useState("");
+
+
 
   async function fetchFlights() {
     const resp = await fetch(
@@ -46,7 +48,8 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Hero />
+      <Hero searchQuery={searchQuery} setSearchQuery={setSearchQuery} setSearchResult={setSearchResult} />
+      {console.log(searchQuery)}
       <SearchSection
         setDestinationFrom={setDestinationFrom}
         setDestinationTo={setDestinationTo}
@@ -55,11 +58,11 @@ function App() {
         setDirectFlight={setDirectFlight}
         setResultsPerPage={setResultsPerPage}
       />
-      {flights && flights.length > 0 ? 
-          <ResultsSection 
-          flights={flights} 
+      {flights && flights.length > 0 ?
+        <ResultsSection
+          flights={flights}
           resultsPerPage={resultsPerPage}
-          setOffset={setOffset} 
+          setOffset={setOffset}
           offset={offset} /> : <h2 className="no__flights">Sorry, they're no flights to that destination</h2>}
 
 
