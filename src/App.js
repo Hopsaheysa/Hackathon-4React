@@ -6,7 +6,7 @@ import Header from "./Components/Header";
 import SearchSection from "./Components/SearchSection";
 import Hero from "./Components/Hero";
 import ResultsSection from "./Components/ResultsSection";
-import Button from "./Components/Button";
+import Contact from "./Components/Contact";
 import Footer from "./Components/Footer";
 
 function App() {
@@ -52,6 +52,7 @@ function App() {
       />
       {flights && flights.length > 0 ? <ResultsSection flights={flights} /> : <h2 className="no__flights">Sorry, they're no flights to that destination</h2> }
       
+      <Contact />
 
       <Footer />
     </div>

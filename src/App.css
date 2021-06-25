@@ -96,18 +96,21 @@ h2 {
   font-size: 50%;
   text-align: center;
   /* background-image: url("./airport.jpg"); */
-  background-attachment: fixed;
+  /* background-attachment: fixed;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: cover; */
 }
 
 #section_three {
-  height: 100vh;
+  background-image: url("./airport.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
   width: 100%;
   text-align: center;
   margin: 0;
   padding: 0;
-  background-color: #f8f8ff;
+  /* background-color: #f8f8ff; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -158,7 +161,75 @@ h2 {
   color: #000c66;
   text-align: center;
 }
+/* CONTACT */
 
+.section-contact {
+  background-image: url("./aircraft.jpg");
+  text-align: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  width: 100%;
+  padding: 2rem 15% 6rem 15%;
+}
+
+/* .form {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  color: #7ec8e3;
+} */
+
+/* .form__input {
+  color: #ffffff;
+  width: 50%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #ebebeb;
+  font-family: "Bodoni Moda", serif;
+  outline: none;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.form__input::placeholder {
+  color: #ebebeb;
+  font-family: "Bodoni Moda", serif;
+} */
+
+/* .form-label {
+  width: 100%;
+  color: #ffffff;
+  font-size: 0.8rem;
+  margin-bottom: 0.5rem;
+} */
+
+.form__textarea {
+  width: 50%;
+  border: none;
+  border-radius: 0.5rem;
+  outline: none;
+  /* font-size: 1.5rem; */
+  margin-bottom: 2rem;
+  padding: 0.5rem;
+}
+
+.form__button {
+  width: 50%;
+  color: #ffffff;
+  background-color: #000c66;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+
+.form__button:hover {
+  box-shadow: 2px 2px 8px 0px #7070ff;
+}
 /* FOOTER */
 
 .footer {
