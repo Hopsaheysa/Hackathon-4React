@@ -161,6 +161,19 @@ h2 {
   color: #000c66;
   text-align: center;
 }
+
+.btn_prev,
+.btn_next {
+  color: #ffffff;
+  background-color: #000c66;
+  width: 15%;
+  /* margin: 1em; */
+  padding: 0.1rem;
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  border-radius: 0.5rem;
+}
+
 /* CONTACT */
 
 .section-contact {
@@ -172,45 +185,11 @@ h2 {
   padding: 2rem 15% 6rem 15%;
 }
 
-/* .form {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  color: #7ec8e3;
-} */
-
-/* .form__input {
-  color: #ffffff;
-  width: 50%;
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid #ebebeb;
-  font-family: "Bodoni Moda", serif;
-  outline: none;
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-}
-
-.form__input::placeholder {
-  color: #ebebeb;
-  font-family: "Bodoni Moda", serif;
-} */
-
-/* .form-label {
-  width: 100%;
-  color: #ffffff;
-  font-size: 0.8rem;
-  margin-bottom: 0.5rem;
-} */
-
 .form__textarea {
   width: 50%;
   border: none;
   border-radius: 0.5rem;
   outline: none;
-  /* font-size: 1.5rem; */
   margin-bottom: 2rem;
   padding: 0.5rem;
 }
@@ -230,6 +209,7 @@ h2 {
 .form__button:hover {
   box-shadow: 2px 2px 8px 0px #7070ff;
 }
+
 /* FOOTER */
 
 .footer {

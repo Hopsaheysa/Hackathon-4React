@@ -53,9 +53,9 @@ function ResultsSection(props) {
                         ))}
                     </tbody>
                 </table>
-                {props.offset - props.resultsPerPage < 0 ? "" : <button onClick={handleSubmitPrev}>Previous</button>}
+                {props.offset - props.resultsPerPage < 0 ? "" : <button className="btn_prev" onClick={handleSubmitPrev}>Previous</button>}
                 
-                {props.offset + props.resultsPerPage >= props.flights.length ? "" : <button onClick={handleSubmitNext}>Next</button>}
+                {props.offset + props.resultsPerPage >= props.flights.length ? "" : <button className="btn_next" onClick={handleSubmitNext}>Next</button>}
 
             </div>
         </section>

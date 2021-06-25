@@ -61,6 +61,7 @@ function SearchSection(props) {
                     <input type="checkbox" />
                     <br />
                     Limit by:
+                    <br />
                     <input type="number" defaultValue={5}/>
                     <button className="search__button" type="submit">Search</button>
                 </form>
