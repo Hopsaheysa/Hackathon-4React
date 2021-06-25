@@ -12,8 +12,8 @@ function App() {
   const [flights, setFlights] = useState(null);
   const [destinationFrom, setDestinationFrom] = useState("PRG");
   const [destinationTo, setDestinationTo] = useState("VIE");
-  const [dateDeparture, setDateDeparture] = useState("25/06/2021");
-  const [dateArrival, setDateArrival] = useState("30/06/2021");
+  const [dateDeparture, setDateDepartureFrom] = useState("25/06/2021");
+  const [dateArrival, setDateDepartureTo] = useState("30/06/2021");
   const [searchQuery, setSearchQuery] = useState(null);
   const [searchResult, setSearchResult] = useState("");
 
@@ -40,7 +40,7 @@ function App() {
     <div className="App">
       <Header />
       <Hero />
-      <SearchSection setDestinationFrom={setDestinationFrom} setDestinationTo={setDestinationTo} setDateDeparture={setDateDeparture} setDateArrival={setDateArrival} />
+      <SearchSection setDestinationFrom={setDestinationFrom} setDestinationTo={setDestinationTo} setDateDepartureFrom={setDateDepartureFrom} setDateDepartureTo={setDateDepartureTo} />
       {flights ?  <ResultsSection /> : "No Flights"}
            
       <Footer />
