@@ -14,6 +14,9 @@ function App() {
   const [destinationTo, setDestinationTo] = useState("VIE");
   const [dateDeparture, setDateDeparture] = useState("25/06/2021");
   const [dateArrival, setDateArrival] = useState("30/06/2021");
+  const [searchQuery, setSearchQuery] = useState(null);
+  const [searchResult, setSearchResult] = useState("");
+
 
 
   async function fetchFlights() {    
@@ -27,18 +30,19 @@ function App() {
   }
 
   useEffect(() => {
-    fetchFlights()
-  }, [])
+    searchQuery && fetchFlights();
+  }, [searchQuery])
 
-  if (flights === null) return "Loading the flights";
+  // if (flights === null) {return "Loading the flights";
 
 
   return (
     <div className="App">
       <Header />
       <Hero />
-      <SearchSection />
-      <ResultsSection />
+      <SearchSection setDestinationFrom={setDestinationFrom} setDestinationTo={setDestinationTo} setDateDeparture={setDateDeparture} setDateArrival={setDateArrival} />
+      {flights ?  <ResultsSection /> : "No Flights"}
+           
       <Footer />
 
     </div>
