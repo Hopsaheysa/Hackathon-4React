@@ -15,13 +15,16 @@ function App() {
   const [destinationTo, setDestinationTo] = useState("");
   const [dateDepartureFrom, setDateDepartureFrom] = useState("");
   const [dateDepartureTo, setDateDepartureTo] = useState("");
+  const [directFlight, setDirectFlight] = useState("&direct_flights=0")
+
 
   // const [searchQuery, setSearchQuery] = useState(null);
   // const [searchResult, setSearchResult] = useState("");
 
+
   async function fetchFlights() {
     const resp = await fetch(
-      `https://api.skypicker.com/flights?fly_from=${destinationFrom}&fly_to=${destinationTo}&date_from=${dateDepartureFrom}&date_to=${dateDepartureTo}&partner=data4youcbp202106&limit=10&direct_flights=1
+      `https://api.skypicker.com/flights?fly_from=${destinationFrom}&fly_to=${destinationTo}&date_from=${dateDepartureFrom}&date_to=${dateDepartureTo}&partner=data4youcbp202106&limit=10&${directFlight}
 
 `
     );
@@ -49,11 +52,11 @@ function App() {
         setDestinationTo={setDestinationTo}
         setDateDepartureFrom={setDateDepartureFrom}
         setDateDepartureTo={setDateDepartureTo}
+        setDirectFlight={setDirectFlight}
       />
-      {flights && flights.length > 0 ? <ResultsSection flights={flights} /> : <h2 className="no__flights">Sorry, they're no flights to that destination</h2> }
-      
-      <Contact />
+      {flights && flights.length > 0 ? <ResultsSection flights={flights} /> : <h2 className="no__flights">Sorry, they're no flights to that destination</h2>}
 
+      <Contact />
       <Footer />
     </div>
   );
