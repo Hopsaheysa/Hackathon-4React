@@ -1,38 +1,221 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+/* GENERAL COMPONENTS */
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+html,
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+h1 {
+  font-weight: 400;
+  font-size: 700%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h2 {
+  font-weight: 400;
+  font-size: 200%;
+}
+
+/* NAVBAR  */
+.row {
+  width: 100%;
+  height: 4rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  text-decoration: none;
+  background-color: #000c66;
+  font-size: calc(10px + 2vmin);
+  list-style-type: none;
+}
+
+.nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  list-style-type: none;
+  margin-top: 1em;
+  padding: 0;
+}
+
+.nav__link {
+  text-decoration: none;
+  color: #ebebeb;
+}
+
+.nav__link:hover,
+.nav__link:active {
+  color: #7ec8e3;
+  cursor: pointer;
+}
+
+.logo {
+  height: 3rem;
+  margin-left: 4rem;
+}
+
+/* HERO */
+
+.hero-text-box {
+  height: 80vh;
+  color: #ebebeb;
+  text-align: center;
+  padding-top: 10rem;
+  background-image: url("./plane.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+/* SECTIONS */
+
+#section_one {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f8ff;
+  color: #392338;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#section_two {
+  height: 100vh;
+  font-size: 50%;
+  text-align: center;
+  background-image: url("./airport.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#section_three {
+  height: 100vh;
+  width: 100%;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f8ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* RESULTS TABLE */
+
+.styled-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 250%;
+  font-weight: bold;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  display: flex;
+  justify-content: center;
+}
+
+.styled-table thead tr {
+  color: #7ec8e3;
+  text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+  padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+  border-bottom: 1px solid #7ec8e3;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+  background-color: #7ec8e3;
+}
+
+.styled-table tbody tr:last-of-type {
+  border-bottom: 2px solid #7ec8e3;
+}
+
+.styled-table tbody tr.active-row {
+  font-weight: bold;
+  color: #000c66;
+}
+
+/* FOOTER */
+
+.footer {
+  background-color: #000c66;
+}
+
+.footer__nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  height: 5rem;
+  text-decoration: none;
+}
+
+.footer__nav__list {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  padding-top: 2em;
+}
+
+.link_2 {
+  display: flex;
+  color: white;
+  text-decoration: none;
+  padding: 1.25rem 3rem;
+}
+
+.link_2:hover {
+  color: #7ec8e3;
+  cursor: pointer;
+}
+
+.footer__social {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-decoration: none;
+  padding: 1.25rem 3rem;
+}
+
+h4 {
+  display: flex;
+  justify-content: center;
+}
+
+p {
+  display: flex;
+  justify-content: center;
+}
+
+h4 a {
+  color: #ced4da;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+.link_3 {
+  color: #7ec8e3;
+  text-decoration: none;
+}
+
+.link_3:hover {
+  color: #ced4da;
+  cursor: pointer;
 }
