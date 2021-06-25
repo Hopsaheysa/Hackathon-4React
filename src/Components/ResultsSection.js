@@ -13,12 +13,14 @@ function ResultsSection() {
                             <th>Price</th>
                         </tr>
                     </tbody>
-                    {/* <tr>
+                     {/* <tbody>
+                    <tr>
                     <td>Paris</td>
                     <td>12:00</td>
                     <td>15:30</td>
                     <td>$275</td>
             </tr>
+            </tbody>
             <tr>
                     <td>Berlin</td>
                     <td>12:10</td>
