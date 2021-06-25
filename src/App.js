@@ -34,7 +34,7 @@ function App() {
       fetchFlights();
   }, [destinationFrom, destinationTo, dateDepartureFrom, dateDepartureTo]);
 
-  // if (flights === null) {return "Loading the flights";
+  // if (flights === null) return "Loading the flights";
 
   return (
     <div className="App">
