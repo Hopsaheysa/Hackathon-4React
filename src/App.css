@@ -69,10 +69,23 @@ h2 {
   height: 80vh;
   color: #ebebeb;
   text-align: center;
-  padding-top: 10rem;
+  padding-top: 6rem;
   background-image: url("./plane.jpg");
   background-attachment: fixed;
   background-size: cover;
+}
+
+.btn_find {
+  color: #ffffff;
+  background-color: #000c66;
+  width: 5%;
+  font-size: 0.75rem;
+  border-radius: 0.25rem;
+}
+
+.search_input {
+  margin-top: 2em;
+  padding: 0.25em;
 }
 
 /* SECTIONS */
@@ -92,13 +105,8 @@ h2 {
 
 #section_two {
   color: #000c66;
-  /* height: 100vh; */
   font-size: 50%;
   text-align: center;
-  /* background-image: url("./airport.jpg"); */
-  /* background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover; */
 }
 
 #section_three {
@@ -110,11 +118,19 @@ h2 {
   text-align: center;
   margin: 0;
   padding: 0;
-  /* background-color: #f8f8ff; */
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+.search__button {
+  color: #ffffff;
+  background-color: #000c66;
+  padding: 0.25rem;
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  border-radius: 0.25rem;
 }
 
 /* RESULTS TABLE */

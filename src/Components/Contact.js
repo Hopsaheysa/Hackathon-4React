@@ -1,7 +1,7 @@
 function Contact() {
   return(
       <div>
-      <div id="#section_three" class="section-contact">
+      <div id="section-contact" class="section-contact">
         
           <h1>Have a nice flight!</h1>
             <h2>We would love to hear from you...</h2>

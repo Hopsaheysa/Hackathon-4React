@@ -1,6 +1,7 @@
 import { DateTime } from 'luxon';
 
 function SearchSection(props) {
+    
     function handleSubmit(event) {
         event.preventDefault();
         const dateFrom = DateTime.fromISO(event.target[2].value);
@@ -33,8 +34,12 @@ function SearchSection(props) {
                     <select name="destinations" id="destinations">
                         <option value="PRG">Prague</option>
                         <option value="SXF">Berlin</option>
+                        <option value="CDG">Paris</option>
                         <option value="MAD">Madrid</option>
+                        <option value="AMS">Amsterdam</option>
+                        <option value="ATH">Athens</option>
                         <option value="WAW">Warsaw</option>
+                        <option value="LEU">Andorra</option>
                         <option value="PED">Pardubice</option>
                         <option value="EMA">East Midlands Airport</option>
                     </select>
@@ -45,7 +50,10 @@ function SearchSection(props) {
                         <option value="BCN">Barcelona</option>
                         <option value="MAD">Madrid</option>
                         <option value="MXP">Milano</option>
+                        <option value="WAW">Warsaw</option>
                         <option value="PRG">Prague</option>
+                        <option value="PED">Pardubice</option>
+                        <option value="SXF">Berlin</option>
                         <option value="EMA">East Midlands Airport</option>
                     </select>
                     <br />
@@ -57,12 +65,16 @@ function SearchSection(props) {
                     <br />
                     <input type="date" defaultValue="2021-06-30" />
                     <br />
-                    Direct Flights:
-                    <input type="checkbox" />
+                 <div className="search__limits">
+                        Direct Flights:
+                        <br />
+                        <input type="checkbox" />
+                        <br />
+                        Limit by:
+                        <br />
+                        <input type="number" defaultValue={5} />
+                 </div>
                     <br />
-                    Limit by:
-                    <br />
-                    <input type="number" defaultValue={5}/>
                     <button className="search__button" type="submit">Search</button>
                 </form>
             </div>
