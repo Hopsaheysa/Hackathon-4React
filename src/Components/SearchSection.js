@@ -3,14 +3,18 @@ import { DateTime } from 'luxon';
 function SearchSection(props) {
     function handleSubmit(event) {
         event.preventDefault();
-        console.log(event.target[0].value);
-        console.log(event.target[1].value);
+        // console.log(event.target[0].value);
+        // console.log(event.target[1].value);
         // console.log(event);
         const dateFrom = DateTime.fromISO(event.target[2].value);
-        console.log(dateFrom);
+        // console.log(dateFrom);
         // DateTime.fromFormat(event.target[2].value, "" * 1000).toFormat('hh:mm')
 
         // props.setSearchQuery(event.target.value);
+        props.setDestinationFrom(event.target[0].value)
+        props.setDestinationTo(event.target[1].value)
+        props.setDateDepartureFrom(event.target[2].value)
+        props.setDateDepartureTo(event.target[3].value)
     }
 
 

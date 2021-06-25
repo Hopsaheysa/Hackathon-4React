@@ -12,26 +12,25 @@ function App() {
   const [flights, setFlights] = useState(null);
   const [destinationFrom, setDestinationFrom] = useState("PRG");
   const [destinationTo, setDestinationTo] = useState("VIE");
-  const [dateDeparture, setDateDepartureFrom] = useState("25/06/2021");
-  const [dateArrival, setDateDepartureTo] = useState("30/06/2021");
-  const [searchQuery, setSearchQuery] = useState(null);
-  const [searchResult, setSearchResult] = useState("");
+  const [dateDepartureFrom, setDateDepartureFrom] = useState("25/06/2021");
+  const [dateDepartureTo, setDateDepartureTo] = useState("30/06/2021");
+  // const [searchQuery, setSearchQuery] = useState(null);
+  // const [searchResult, setSearchResult] = useState("");
 
 
 
   async function fetchFlights() {    
 
-    const resp = await fetch(`https://api.skypicker.com/flights?fly_from=${destinationFrom}&fly_to=${destinationTo}&date_from=${dateDeparture}&date_to=${dateArrival}&partner=data4youcbp202106`);
+    const resp = await fetch(`https://api.skypicker.com/flights?fly_from=${destinationFrom}&fly_to=${destinationTo}&date_from=${dateDepartureFrom}&date_to=${dateDepartureTo}&partner=data4youcbp202106`);
     const flights = await resp.json();
     console.log(flights);
-
     return setFlights(flights);
 
   }
 
   useEffect(() => {
-    searchQuery && fetchFlights();
-  }, [searchQuery])
+    destinationFrom && destinationTo && dateDepartureFrom && dateDepartureTo && fetchFlights();
+  }, [destinationFrom, destinationTo, dateDepartureFrom, dateDepartureTo])
 
   // if (flights === null) {return "Loading the flights";
 
